@@ -3,7 +3,7 @@ import { Collection } from "../models/Collection";
 export abstract class CollectionView<T, K> {
   constructor(public parent: Element, public collection: Collection<T, K>) {}
 
-  abstract renderItem(model: T, itemParent: Element): void;
+  abstract renderItem(itemParent: Element, model: T): void;
 
   render(): void {
     this.parent.innerHTML = "";
@@ -12,7 +12,7 @@ export abstract class CollectionView<T, K> {
 
     for (let model of this.collection.models) {
       const itemParent = document.createElement("div");
-      this.renderItem(model, itemParent);
+      this.renderItem(itemParent, model);
       templateElement.content.append(itemParent);
     }
 
