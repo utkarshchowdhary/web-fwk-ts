@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Naruto Uzumaki",
+      "age": 21
+    },
+    {
+      "id": 2,
+      "name": "Nagato Uzumaki",
+      "age": 35
+    },
+    {
+      "name": "Obito Uchiha",
+      "age": 36,
+      "id": 3
+    }
+  ]
+}
