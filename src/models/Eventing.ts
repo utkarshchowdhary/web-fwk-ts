@@ -10,12 +10,8 @@ export class Eventing {
   trigger = (eventName: string): void => {
     const handlers = this.events[eventName];
 
-    if (!handlers || handlers.length === 0) {
-      return;
+    if (handlers != null) {
+      handlers.forEach((callback) => callback());
     }
-
-    handlers.forEach((callback) => {
-      callback();
-    });
   };
 }

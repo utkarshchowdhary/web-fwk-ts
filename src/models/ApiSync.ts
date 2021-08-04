@@ -14,7 +14,7 @@ export class ApiSync<T extends HasId> {
   save(data: T): AxiosPromise {
     const { id } = data;
 
-    if (typeof id === "undefined") {
+    if (id == null) {
       return axios.post(this.rootUrl, data);
     } else {
       return axios.put(`${this.rootUrl}/${id}`, data);

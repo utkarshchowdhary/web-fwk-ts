@@ -37,9 +37,9 @@ export class Model<T extends HasId> {
   }
 
   async fetch(): Promise<void> {
-    const id = <number | undefined>this.get("id");
+    const id = this.get("id") as number | undefined;
 
-    if (typeof id === "undefined") {
+    if (id == null) {
       throw new Error("Cannot fetch without an id");
     } else {
       const response = await this.sync.fetch(id);
